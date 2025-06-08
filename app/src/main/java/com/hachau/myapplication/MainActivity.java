@@ -29,6 +29,12 @@ public class MainActivity extends AppCompatActivity {
     ImageView imgProduct;
     TextView txtProduct;
 
+    ImageView imgAdvancedProduct;
+    TextView txtAdvancedProduct;
+
+    ImageView imgPaymentMethod;
+    TextView txtPaymentMethod;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -86,26 +92,43 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        imgCategory.setOnClickListener(new View.OnClickListener() {
+        imgAdvancedProduct.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                openCategoryManagementActivity();
+            public void onClick(View v) {
+                openAdvancedProductManagementActivity();
             }
         });
 
-        txtCategory.setOnClickListener(new View.OnClickListener() {
+        txtAdvancedProduct.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                openCategoryManagementActivity();
+            public void onClick(View v) {
+                openAdvancedProductManagementActivity();
+            }
+        });
+
+        imgPaymentMethod.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openPaymentMethodActivity();
             }
         });
 
     }
 
-    private void openCategoryManagementActivity() {
-        Intent intent = new Intent(MainActivity.this, CategoryManagementActivity.class);
+    private void openPaymentMethodActivity() {
+        Intent intent=new Intent(MainActivity.this, PaymentMethodActivity.class);
         startActivity(intent);
     }
+
+    private void openAdvancedProductManagementActivity() {
+        Intent intent=new Intent(MainActivity.this, AdvancedProductManagementActivity.class);
+        startActivity(intent);
+    }
+
+//    private void openCategoryManagementActivity() {
+//        Intent intent = new Intent(MainActivity.this, CategoryManagementActivity.class);
+//        startActivity(intent);
+//    }
 
     private void openProductManagementActivity() {
         Intent intent=new Intent(MainActivity.this, ProductManagementActivity.class);
@@ -128,10 +151,12 @@ public class MainActivity extends AppCompatActivity {
         txtEmployee=findViewById(R.id.txtEmployee);
         imgCustomer=findViewById(R.id.imgCustomer);
         txtCustomer=findViewById(R.id.txtCustomer);
-        imgCategory=findViewById(R.id.imgCategory);
-        txtCategory=findViewById(R.id.txtCategory);
         imgProduct=findViewById(R.id.imgProduct);
         txtProduct=findViewById(R.id.txtProduct);
+        imgAdvancedProduct=findViewById(R.id.imgAdvancedProduct);
+        txtAdvancedProduct=findViewById(R.id.txtAdvancedProduct);
+        imgPaymentMethod=findViewById(R.id.imgPaymentMethod);
+        txtPaymentMethod=findViewById(R.id.txtPaymentMethod);
     }
 }
 

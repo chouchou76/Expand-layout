@@ -72,26 +72,26 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-
+                android:layout_height="match_parent"
                 android:gravity="center_horizontal"
                 android:orientation="vertical">
 
                 <ImageView
-                    android:id="@+id/imgCategory"
+                    android:id="@+id/imgAdvancedProduct"
                     android:layout_width="150dp"
                     android:layout_height="150dp"
                     android:scaleType="fitCenter"
-                    app:srcCompat="@drawable/ic_category" />
+                    app:srcCompat="@drawable/ic_advanced_product" />
 
                 <TextView
-                    android:id="@+id/txtCategory"
+                    android:id="@+id/txtAdvancedProduct"
                     android:layout_width="wrap_content"
                     android:layout_height="61dp"
-                    android:text="@string/title_category"
+                    android:text="@string/title_advanced_product"
                     android:textAlignment="center"
                     android:textColor="#A62626"
                     android:textSize="24sp" />
+
             </LinearLayout>
 
             <LinearLayout
@@ -121,32 +121,57 @@
 
         </TableRow>
 
+
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="match_parent" >
+            android:layout_height="match_parent">
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
+
                 android:gravity="center_horizontal"
                 android:orientation="vertical">
 
                 <ImageView
-                    android:id="@+id/imgAdvancedProduct"
+                    android:id="@+id/imgPaymentMethod"
                     android:layout_width="150dp"
                     android:layout_height="150dp"
                     android:scaleType="fitCenter"
-                    app:srcCompat="@drawable/ic_advanced_product" />
+                    app:srcCompat="@drawable/ic_paymentmethod" />
 
                 <TextView
-                    android:id="@+id/txtAdvancedProduct"
+                    android:id="@+id/txtPaymentMethod"
                     android:layout_width="wrap_content"
                     android:layout_height="61dp"
-                    android:text="@string/title_advanced_product"
+                    android:text="@string/title_payment_method"
                     android:textAlignment="center"
                     android:textColor="#A62626"
                     android:textSize="24sp" />
+            </LinearLayout>
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/imgOrder"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:scaleType="fitCenter"
+                    app:srcCompat="@drawable/ic_order" />
+
+                <TextView
+                    android:id="@+id/txtOrder"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/title_order"
+                    android:textAlignment="center"
+                    android:textColor="#A62626"
+                    android:textSize="24sp" />
             </LinearLayout>
         </TableRow>
 
