@@ -34,7 +34,7 @@ public class EmployeeHealthCareActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         addViews();
         addEvents();
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.lvOrdersViewer), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;

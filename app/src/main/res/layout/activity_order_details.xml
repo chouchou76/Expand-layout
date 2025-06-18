@@ -1,6 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-             android:layout_width="match_parent"
-             android:layout_height="match_parent">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:id="@+id/txtOrderCode"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Mã đơn hàng: "
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/txtOrderDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Ngày đặt hàng: "
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/txtEmployeeName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Nhân viên: "
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/txtCustomerName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Khách hàng: "
+        android:textSize="16sp" />
+
+    <ListView
+        android:id="@+id/lvOrderDetails"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+</LinearLayout>

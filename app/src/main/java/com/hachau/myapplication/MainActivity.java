@@ -1,10 +1,7 @@
 package com.hachau.myapplication;
 
-import static androidx.core.content.ContextCompat.startActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -35,6 +32,12 @@ public class MainActivity extends AppCompatActivity {
     ImageView imgPaymentMethod;
     TextView txtPaymentMethod;
 
+    ImageView imgOrder;
+    TextView txtOrder;
+
+    ImageView imgTelephony;
+    TextView txtTelephony;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         addViews();
         addEvents();
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.lvOrdersViewer), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
@@ -113,6 +116,37 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        imgOrder.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openOrdersViewerActivity();
+            }
+        });
+        
+        imgTelephony.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openTelephonyActivity();
+            }
+        });
+
+        txtTelephony.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openTelephonyActivity();
+            }
+        });
+
+    }
+
+    private void openTelephonyActivity() {
+        Intent intent=new Intent(MainActivity.this, TelephonyActivity.class);
+        startActivity(intent);
+    }
+
+    private void openOrdersViewerActivity() {
+        Intent intent=new Intent(MainActivity.this, OrdersViewerActivity.class);
+        startActivity(intent);
     }
 
     private void openPaymentMethodActivity() {
@@ -157,6 +191,10 @@ public class MainActivity extends AppCompatActivity {
         txtAdvancedProduct=findViewById(R.id.txtAdvancedProduct);
         imgPaymentMethod=findViewById(R.id.imgPaymentMethod);
         txtPaymentMethod=findViewById(R.id.txtPaymentMethod);
+        imgOrder=findViewById(R.id.imgOrder);
+        txtOrder=findViewById(R.id.txtOrder);
+        imgTelephony=findViewById(R.id.imgTelephony);
+        txtTelephony=findViewById(R.id.txtTelephony);
     }
 }
 

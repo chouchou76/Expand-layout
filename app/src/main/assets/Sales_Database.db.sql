@@ -9,7 +9,7 @@ CREATE TABLE IF NOT EXISTS "Customer" (
 	"id"	INTEGER,
 	"Name"	TEXT,
 	"Email"	TEXT,
-	"Phone"	INTEGER,
+	"Phone"	TEXT,
 	"UserName"	TEXT,
 	"Password"	TEXT,
 	PRIMARY KEY("id" AUTOINCREMENT)
@@ -17,8 +17,8 @@ CREATE TABLE IF NOT EXISTS "Customer" (
 CREATE TABLE IF NOT EXISTS "Employee" (
 	"id"	INTEGER,
 	"Name"	TEXT,
-	"Email"	INTEGER,
-	"Phone"	INTEGER,
+	"Email"	TEXT,
+	"Phone"	TEXT,
 	"UserName"	TEXT,
 	"Password"	TEXT,
 	PRIMARY KEY("id" AUTOINCREMENT)
@@ -72,16 +72,16 @@ INSERT INTO "Category" VALUES (7,'Fruit',NULL);
 INSERT INTO "Category" VALUES (8,'Snack',NULL);
 INSERT INTO "Category" VALUES (9,'Coffee',NULL);
 INSERT INTO "Category" VALUES (10,'Ice Cream',NULL);
-INSERT INTO "Customer" VALUES (1,'Hee','hee1510@gmail.com',915102001,'heehee','123');
-INSERT INTO "Customer" VALUES (2,'Jay','jay2004@gmail.com',920042002,'jay','1234');
-INSERT INTO "Customer" VALUES (3,'Jake','jake1511@gmail.com',915112002,'jake','2345');
-INSERT INTO "Customer" VALUES (4,'Hoon','hoon0912@gmail.com',920020912,'hoonie','3456');
-INSERT INTO "Customer" VALUES (5,'Noo','noo2406@gmail.com',903240620,'ddeonu','4567');
-INSERT INTO "Customer" VALUES (6,'Won','won0902@gmail.com',904090204,'wonnie','5678');
-INSERT INTO "Customer" VALUES (7,'Ki','ki0812@gmail.com',912082005,'riki','6789');
-INSERT INTO "Employee" VALUES (1,'Jay','jay@gmail.com',958204202,'jayie','0420');
-INSERT INTO "Employee" VALUES (2,'Jake','jake@gmail.com',963887335,'jackeu','2002');
-INSERT INTO "Employee" VALUES (3,'Jack','jack@gmail.com',853482375,'tuantrinh','1997');
+INSERT INTO "Customer" VALUES (1,'Hee','hee1510@gmail.com','915102001','heehee','123');
+INSERT INTO "Customer" VALUES (2,'Jay','jay2004@gmail.com','920042002','jay','1234');
+INSERT INTO "Customer" VALUES (3,'Jake','jake1511@gmail.com','915112002','jake','2345');
+INSERT INTO "Customer" VALUES (4,'Hoon','hoon0912@gmail.com','920020912','hoonie','3456');
+INSERT INTO "Customer" VALUES (5,'Noo','noo2406@gmail.com','903240620','ddeonu','4567');
+INSERT INTO "Customer" VALUES (6,'Won','won0902@gmail.com','904090204','wonnie','5678');
+INSERT INTO "Customer" VALUES (7,'Ki','ki0812@gmail.com','912082005','riki','6789');
+INSERT INTO "Employee" VALUES (1,'Jay','jay@gmail.com','958204202','jayie','0420');
+INSERT INTO "Employee" VALUES (2,'Jake','jake@gmail.com','963887335','jackeu','2002');
+INSERT INTO "Employee" VALUES (3,'Jack','jack@gmail.com','853482375','tuantrinh','1997');
 INSERT INTO "OrderDetails" VALUES (1,1,24,2,44.0,8.0,20.0,NULL);
 INSERT INTO "OrderDetails" VALUES (2,1,6,5,31.0,5.0,15.0,NULL);
 INSERT INTO "OrderDetails" VALUES (3,1,23,4,24.0,10.0,10.0,NULL);

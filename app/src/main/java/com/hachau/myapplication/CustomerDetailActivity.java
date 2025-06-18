@@ -30,7 +30,7 @@ public class CustomerDetailActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_customer_detail);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.lvOrdersViewer), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
@@ -46,11 +46,29 @@ public class CustomerDetailActivity extends AppCompatActivity {
                 process_save_customer();
             }
         });
+
+        btn_remove.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                process_remove_customer();
+            }
+        });
+    }
+
+    private void process_remove_customer() {
+        Intent intent=getIntent();
+        String id=edt_customer_id.getText().toString();
+        intent.putExtra("CUSTOMER_TO_REMOVE",id);
+        setResult(600,intent);
+        finish();
     }
 
     private void process_save_customer() {
 //        lấy dữ liệu trên giao diện và mô hình hóa lại hướng đối tượng
         Customer c=new Customer();
+        String id=edt_customer_id.getText().toString();
+        if(id.trim().length()>0)
+            c.setId(Integer.parseInt(id));
         c.setId(Integer.parseInt(edt_customer_id.getText().toString()));
         c.setName(edt_customer_name.getText().toString());
         c.setEmail(edt_customer_email.getText().toString());
@@ -86,7 +104,10 @@ public class CustomerDetailActivity extends AppCompatActivity {
 //        lấy dữ liệu Selected Customer từ intent
         Customer c= (Customer) intent.getSerializableExtra("SELECTED_CUSTOMER");
         if (c==null)
-            return;;
+        {
+            edt_customer_id.setVisibility(View.GONE);
+            return;
+        }
 //        Hiển thị thông tin Customer lên giao diện
         edt_customer_id.setText(c.getId()+"");
         edt_customer_name.setText(c.getName());
